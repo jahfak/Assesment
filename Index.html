@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John's Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #0f0;
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .oldnet-bg {
+            background-color: #000;
+            background-image: 
+                linear-gradient(rgba(0, 30, 0, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 30, 0, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 255, 0, 0.3), transparent);
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        
+        .retro-border {
+            border: 2px solid #0f0;
+            box-shadow: 0 0 10px #0f0;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+        }
+        
+        .crt-effect::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .retro-link {
+            color: #0f0;
+            text-decoration: underline;
+        }
+        
+        .retro-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #fff;
+        }
+    </style>
+</head>
+<body class="oldnet-bg crt-effect">
+    <!-- Scan line effect -->
+    <div class="scan-line"></div>
+    
+    <!-- Flashing cursor -->
+    <div class="fixed bottom-4 right-4 text-green-400 text-xl blink">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+    
+    <!-- Main container -->
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <!-- Header -->
+        <header class="mb-10 retro-border p-4 bg-black bg-opacity-90">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="typewriter mb-4 md:mb-0">
+                    <h1 class="text-2xl md:text-3xl font-bold text-green-400">
+                        <i class="fas fa-terminal mr-2"></i>John's Tech Support Assessment
+                    </h1>
+                </div>
+                <div class="text-green-300">
+                    <span id="date-time"></span>
+                    <div class="flex items-center mt-2">
+                        <div class="w-3 h-3 bg-green-500 mr-2"></div>
+                        <span>ONLINE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-green-300">Technical Customer Support Position Assessment</p>
+                <p class="text-xs text-green-600 mt-1">Website optimized for Netscape Navigator 3.0+</p>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="mb-12 retro-border p-6 bg-black bg-opacity-90">
+            <h2 class="text-2xl font-bold text-green-400 mb-4 border-b border-green-800 pb-2">
+                <i class="fas fa-user mr-2"></i>Greetings, Earthling!
+            </h2>
+            <div class="text-green-300 leading-relaxed">
+                <p class="mb-3">Hi, I'm <span class="text-white font-bold">John Peter De Jesus</span>, and this page is my digital handshake for the Technical Customer Support position.</p>
+                <p class="mb-3">Think of me as your friendly neighborhood tech-savvy problem-solver who doesn't just read error logs but <span class="italic">feels</span> them. I'm here to help users navigate tech hurdles without making them feel like they need a computer science degree.</p>
+                <p class="mb-3">My approach to support: <span class="text-white">"When life gives you 404s, make 200s."</span> Or to put it less cheesily: I translate tech jargon into human speak, calm frustrated users, and actually solve problems.</p>
+                <div class="mt-6 p-4 bg-green-900 bg-opacity-30 border-l-4 border-green-500">
+                    <p class="font-bold text-white">TL;DR:</p>
+                    <p>I fix tech problems, explain things without condescension, and keep users smiling. Let's chat!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Q&A Section -->
+        <section class="retro-border p-6 bg-black bg-opacity-90">
+            <h2 class="text-2xl font-bold text-green-400 mb-6 border-b border-green-800 pb-2">
+                <i class="fas fa-question-circle mr-2"></i>Q&A Section
+            </h2>
+            
+            <!-- Question 1 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q1:</span> Talk about how you made your site and why you chose the tools you did. Briefly explain one challenge you experienced in setting up this site and how you overcame it.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span> I built this site with HTML, Tailwind CSS, and a sprinkle of retro nostalgia. I chose:</p>
+                    <ul class="list-disc pl-5 mb-3">
+                        <li><span class="text-white">Tailwind CSS</span> for rapid, utility-first styling without context switching</li>
+                        <li><span class="text-white">Vanilla JavaScript</span> for lightweight interactivity</li>
+                        <li><span class="text-white">TheOldNet aesthetic</span> because it's memorable and shows I understand tech history</li>
+                    </ul>
+                    <p class="mb-2"><span class="text-white font-bold">Challenge:</span> Creating an authentic retro terminal look while keeping it responsive and accessible.</p>
+                    <p><span class="text-white font-bold">Solution:</span> I used CSS grid for the scan line effect, Font Awesome for retro icons, and tested color contrasts to ensure readability while maintaining that classic green-on-black terminal vibe.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q2:</span> What did you think of our service during the time you used it? Provide some constructive criticism or some features that impressed you.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span> Netlify has been a reliable platform for this web project. Three highlights that stood out:</p>
+                    <p class="mb-3"><span class="text-white font-bold">Highlights:</span></p>
+                    <ul class="list-disc pl-5 mb-3">
+                        <li><span class="text-white">Deploy Previews</span> Instant preview links for every PR/branch made team collaboration seamless and feedback cycles much faster.</li>
+                        <li><span class="text-white">Performance & CDN</span> Sites load quickly globally with zero configuration—great out-of-the-box optimization.</li>
+                        <li><span class="text-white">Form Handling</span> Simple setup for contact forms without needing a backend saved development time.</li>
+                    </ul>
+                    <p class="mb-2"><span class="text-white font-bold">Constructive feedback:</span></p>
+                    <p>The build minutes on the free tier can run out quickly for active projects. A slightly more generous allowance or clearer usage alerts would help avoid unexpected deployment blocks.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q3:</span> Rank your 5 favorite and 5 least favorite activities from this list.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span> Based on the list at <a href="https://gist.github.com/laurajodz/592402a6336410377dee1a744af846ab" class="retro-link">https://gist.github.com/laurajodz/592402a6336410377dee1a744af846ab</a>:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                        <div class="p-3 bg-green-900 bg-opacity-30">
+                            <h4 class="font-bold text-white mb-2"><i class="fas fa-thumbs-up mr-2"></i>Top 5 Favorites</h4>
+                            <ol class="list-decimal pl-5">
+                                <li>Suggest and champion improvements to the Support team's workflow</li>
+                                <li>Work with a customer to figure out if Netlify's service can solve a particular workflow or integration challenge</li>
+                                <li>Develop a code example to share with a customer</li>
+                                <li>Write and maintain Support Guides for our product</li>
+                                <li>Help train and onboard new support teammates</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="p-3 bg-green-900 bg-opacity-30">
+                            <h4 class="font-bold text-white mb-2"><i class="fas fa-thumbs-down mr-2"></i>5 Least Favorites</h4>
+                            <ol class="list-decimal pl-5">
+                                <li>Debug a customer's build using a programming language/framework you've never seen before</li>
+                                <li>Dig through server logs to troubleshoot a customer's website behavior</li>
+                                <li>Respond to 20+ support requests via email every day</li>
+                                <li>Set up your own copy of several site frameworks for debugging</li>
+                                <li>Respond to Netlify customers on Twitter</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q4:</span> Provide a link to documentation for a technical/developer-focused product, which you think are well done, and explain why you think they are well done.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span> The <a href="https://stripe.com/docs" class="retro-link">Stripe API documentation</a> is exceptionally well-executed.</p>
+                    <p class="mb-3">Why it's excellent:</p>
+                    <ul class="list-disc pl-5 mb-3">
+                        <li><span class="text-white">Interactive examples</span> with real code you can run directly in the browser</li>
+                        <li><span class="text-white">Multiple language examples</span> (Python, Ruby, Node, etc.) side-by-side</li>
+                        <li><span class="text-white">Clear visual hierarchy</span> that separates concepts from implementation details</li>
+                        <li><span class="text-white">"Getting started" guides</span> that actually get you started in under 5 minutes</li>
+                        <li><span class="text-white">Error reference</span> that explains what each error means and how to fix it</li>
+                    </ul>
+                    <p>This documentation understands that developers need to solve problems quickly, not read novels about architecture.</p>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q5:</span> Explain, in a couple of paragraphs, what you think are two major challenges around DNS configuration for less-technical customers hosting websites.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span></p>
+                    <p class="mb-3"><span class="text-white font-bold">1. Conceptual Understanding Gap:</span> DNS is fundamentally abstract - it's about invisible records pointing to other invisible things. For non-technical users, concepts like "pointing your domain" or "propagation delays" feel like tech magic. They expect changes to be instant (like editing a Word doc) but DNS changes take time to propagate worldwide. This leads to confusion when their site "doesn't work" immediately after making changes.</p>
+                    <p><span class="text-white font-bold">2. Interface Complexity & Terminology:</span> DNS management interfaces are often designed for technical users, filled with terms like CNAME, A record, TTL, MX records, and TXT records. For someone just wanting their domain to show their website, this is overwhelming. They don't know which record to edit, what values to enter, or how to verify the changes worked. One wrong character in a DNS record can make an entire website or email service unavailable.</p>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q6:</span> A customer writes in to Support saying simply that their "site won't build". You have access to their build logs, and there you see this error: Build failed due to a user error: Build script returned non-zero exit code: 2. You have no more information than this and the site's source repository is private so you cannot test the build yourself. How would you troubleshoot this issue? What steps would you take? Also, please compose your best customer-facing first response.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer - Troubleshooting Steps:</span></p>
+                    <ol class="list-decimal pl-5 mb-4">
+                        <li>Examine the build log for more context - usually there are warnings or errors above the exit code that give clues</li>
+                        <li>Check for common issues: missing dependencies, syntax errors in config files, outdated Node/npm versions</li>
+                        <li>Look at the last successful build and compare dependencies or config changes</li>
+                        <li>Ask the customer about recent changes to their repository, package.json, or build settings</li>
+                        <li>Suggest they run the build command locally to see if they get more detailed error messages</li>
+                    </ol>
+                    
+                    <p class="mb-2"><span class="text-white font-bold">Customer-Facing Response:</span></p>
+                    <div class="p-3 bg-gray-900 border border-gray-700 text-gray-300 font-mono text-sm">
+                        <p>Hi [Customer Name],</p>
+                        <p class="my-2">Thanks for reaching out about your build failure. I can see from the logs that the build process is exiting with error code 2, which usually indicates an issue with the build script or configuration.</p>
+                        <p class="my-2">To help us pinpoint the issue, could you:</p>
+                        <ol class="list-decimal pl-5 my-2">
+                            <li>Check if there were any recent changes to your package.json, build settings, or framework configuration?</li>
+                            <li>Try running your build command locally (e.g., "npm run build") to see if you get more specific error messages?</li>
+                            <li>Verify that all required dependencies are properly listed in your package.json file?</li>
+                        </ol>
+                        <p class="my-2">In the meantime, I'll continue examining the build logs for any additional clues. Often the error message just before the exit code gives us the specific problem.</p>
+                        <p>Best regards,<br>John</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q7:</span> How would you set up an http 301 status redirect from "/netlify/anything" on your site, to https://www.google.com/search?q=anything. Please provide the redirect formatting here. Now, how about a proxy redirect? Please add that proxy redirect rule directly to your site!
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span></p>
+                    
+                    <p class="mb-3"><span class="text-white">301 Redirect rule for _redirects file:</span></p>
+                    <div class="p-3 bg-gray-900 border border-gray-700 text-gray-300 font-mono text-sm mb-4 overflow-x-auto">
+                        /netlify/:query  https://www.google.com/search?q=:query  301
+                    </div>
+                    
+                    <p class="mb-3"><span class="text-white">Proxy redirect rule for _redirects file:</span></p>
+                    <div class="p-3 bg-gray-900 border border-gray-700 text-gray-300 font-mono text-sm mb-2 overflow-x-auto">
+                        /proxy/:query  https://www.google.com/search?q=:query  200
+                    </div>
+                    
+                    <p class="text-sm text-green-400 mt-2"><i class="fas fa-info-circle mr-1"></i> Note: The proxy redirect (200) passes the request through and returns Google's response, while the 301 tells browsers to permanently go to Google instead.</p>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="mb-10 p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q8:</span> Please attempt to deploy a function on our service. This need not be complicated. It could be "Hello World". Note that failure to deploy is not failing the exercise! Whether you have trouble or not, please describe what you experienced and how you attempted to troubleshoot any issues you encountered.
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span> I attempted to deploy a simple "Hello World" serverless function.</p>
+                    
+                    <p class="mb-3"><span class="text-white">Process:</span></p>
+                    <ul class="list-disc pl-5 mb-3">
+                        <li>Created a <code class="bg-gray-800 px-1">netlify/functions/hello.js</code> file with a basic handler</li>
+                        <li>Committed and pushed to my connected Git repository</li>
+                        <li>Monitored the deployment in the Netlify dashboard</li>
+                    </ul>
+                    
+                    <p class="mb-3"><span class="text-white">Experience:</span> The deployment succeeded on the first attempt! The function was live within seconds of pushing to Git.</p>
+                    
+                    <p class="mb-3"><span class="text-white">Function code:</span></p>
+                    <div class="p-3 bg-gray-900 border border-gray-700 text-gray-300 font-mono text-sm mb-4 overflow-x-auto">
+                        exports.handler = async function(event, context) {<br>
+                        &nbsp;&nbsp;return {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;statusCode: 200,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;body: JSON.stringify({ message: "Hello World!" })<br>
+                        &nbsp;&nbsp;};<br>
+                        };
+                    </div>
+                    
+                    <p><span class="text-white">Troubleshooting mindset:</span> Had there been issues, I would have checked: 1) Function location and naming conventions, 2) Runtime compatibility (Node.js version), 3) Deployment logs for specific error messages, 4) Local testing with Netlify CLI.</p>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="p-4 border border-green-800 rounded">
+                <h3 class="text-xl font-bold text-green-300 mb-3">
+                    <span class="text-green-500">Q9:</span> We understand you don't know anything about our internal procedures at this stage, but we want you to explain at a high level how you'd react to this situation: You receive a report of a severe security issue on www.netlify.com. You can't immediately confirm the report, so what steps might you take to investigate or substantiate the report? What might you say to the reporter, even though we haven't confirmed their assertion yet, that will instill confidence that our business is very concerned about security? You believe there is a reasonable chance the report is correct and the problem is very large and impactful. How might you escalate?
+                </h3>
+                <div class="text-green-200 pl-4 border-l-2 border-green-700">
+                    <p class="mb-2"><span class="text-white font-bold">Answer:</span></p>
+                    
+                    <p class="mb-3"><span class="text-white">Initial Investigation Steps:</span></p>
+                    <ul class="list-disc pl-5 mb-3">
+                        <li>Document every detail from the reporter - screenshots, steps to reproduce, affected URLs</li>
+                        <li>Attempt to reproduce the issue in a safe, isolated environment</li>
+                        <li>Check system logs for any unusual activity around the reported time</li>
+                        <li>Review recent deployments or configuration changes that might be related</li>
+                        <li>Consult with security team members if available</li>
+                    </ul>
+                    
+                    <p class="mb-3"><span class="text-white">Response to Reporter:</span></p>
+                    <div class="p-3 bg-gray-900 border border-gray-700 text-gray-300 font-mono text-sm mb-4">
+                        <p>"Thank you for bringing this potential security concern to our attention. We take all security reports extremely seriously and have initiated an immediate investigation. Your detailed report is invaluable in helping us secure our platform for all users. We will keep you updated on our progress and will notify you as soon as we have more information. If you have any additional details or evidence, please don't hesitate to share them with us."</p>
+                    </div>
+                    
+                    <p class="mb-2"><span class="text-white">Escalation Path (if issue appears valid):</span></p>
+                    <ol class="list-decimal pl-5">
+                        <li>Immediately notify the security incident response team lead</li>
+                        <li>Alert engineering leadership about the potential severity</li>
+                        <li>Initiate internal security alert procedures according to company protocol</li>
+                        <li>If customer data is potentially exposed, involve legal/compliance teams</li>
+                        <li>Prepare communication templates for customers if needed</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-green-800 text-center text-green-600 text-sm">
+            <p class="mb-2"><i class="fas fa-cog fa-spin mr-2"></i>This page best viewed in 800x600 resolution with 256 colors</p>
+            <p class="mb-4">© 2023 John Peter De Jesus | Technical Customer Support Assessment</p>
+            <div class="flex justify-center space-x-6 text-xl">
+                <a href="#" class="retro-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="retro-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="retro-link"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="mt-4 text-xs">Last updated: <span id="current-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Update date and time display
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeStr = now.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('date-time').textContent = dateTimeStr;
+            
+            // Set current date in footer
+            const dateStr = now.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            });
+            document.getElementById('current-date').textContent = dateStr;
+        }
+        
+        // Typewriter effect for headings
+        function initTypewriter() {
+            const headings = document.querySelectorAll('.typewriter');
+            headings.forEach(heading => {
+                const text = heading.textContent;
+                heading.textContent = '';
+                heading.style.width = '0';
+                heading.style.animation = `typing 3.5s steps(${text.length}, end), blink-caret .75s step-end infinite`;
+                heading.textContent = text;
+            });
+        }
+        
+        // Add retro terminal click sound effect
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' || e.target.closest('a')) {
+                // Create a subtle terminal beep sound
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            }
+        });
+        
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            initTypewriter();
+            
+            // Update time every second
+            setInterval(updateDateTime, 1000);
+            
+            // Add retro hover effect to all links
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.classList.add('text-white', 'text-shadow-lg');
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.classList.remove('text-white', 'text-shadow-lg');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
